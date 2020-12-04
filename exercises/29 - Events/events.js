@@ -89,3 +89,4 @@ photoEl.addEventListener('mouseenter', event => {
   console.log(event.currentTarget);
   console.log(this);
 });
+

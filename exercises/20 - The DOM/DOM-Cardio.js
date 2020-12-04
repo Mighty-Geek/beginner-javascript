@@ -71,6 +71,7 @@ cards.classList.add('Cards');
 
 // Have that function make 4 cards
 let cardsHTML = generatePlayerCard('amy', 18, 345);
+
 // append those cards to the div
 cardsHTML += generatePlayerCard('wes', 24, 543);
 
