@@ -8,9 +8,10 @@ people.forEach((person, index) => {
   console.log(person.name);
 });
 
+console.table(people);
 // Console Methods
 
-// Callstack
+// Callstack, Stack Trace
 
 // Grabbing Elements
 

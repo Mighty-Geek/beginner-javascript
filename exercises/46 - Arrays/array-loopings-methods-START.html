@@ -128,7 +128,129 @@
     /*
       Looping Methods
     */
+    function logTopping(topping, index, originalArray) {
+      const nextTopping = originalArray[index + 1];
+      const prevTopping = originalArray[index - 1];
+      // log the topping
+      console.log(topping);
 
+      // log prev topping if exists
+      prevTopping ? console.log(prevTopping) : null;
+
+      // log next topping if exists
+      nextTopping ? console.log(nextTopping) : null;
+
+      // if last item log good bye !!
+      index === originalArray.length - 1 ? console.log("Good Bye ✋") : null;
+      //index === originalArray.length - 1 && console.log('Good Bye');
+      console.log("--------😇-------");
+
+    }
+
+    toppings.forEach(logTopping);
+
+
+    // Map, Filter, Reduce
+
+    // MAP
+    function addArms(face) {
+      return `✋ ${face} ✋`;
+    }
+    // eg. 1
+    const toys = faces.map(addArms);
+    console.log(toys);
+
+    // eg. 2
+    const fullNames = ['amy', 'neh', 'jak'].map(name => `${name} JJ`);
+    console.log(fullNames);
+
+    // eg. 3
+    function jjfy(name) {
+      return `${name} JJ`;
+    }
+
+    function capitalize(word) {
+      return `${word[0].toUpperCase()}${word.slice(1)}`;
+    }
+
+    const fullNames2 = ['jack', 'john', 'juli']
+      .map(capitalize)
+      .map(jjfy);
+    console.log(fullNames2);
+
+    // eg. 4
+    const orderTotalWithTax = orderTotals.map(total => total * 1.13);
+    console.log(orderTotalWithTax);
+
+    // eg. 5
+    const cleanPeople = people.map(function (person) {
+      const birthday = new Date(person.birthday);
+      //get their bday
+      const now = Date.now();
+
+      //figure out how old they are
+      const age = Math.floor((now - birthday) / 31536000000);
+      console.log(age);
+
+      //return their full name and bday in an object
+      return {
+        age: age,
+        name: `${person.names.first} ${person.names.last}`,
+      }
+    });
+
+    console.table(cleanPeople);
+
+    console.clear();
+    // FILTER, FIND, Higher order Functions
+
+    //eg. 1
+    const over40 = cleanPeople.filter(e => e.age > 40);
+    console.table(over40);
+
+    //eg. 2
+    // const student = students.find(s => s.id === '565a');
+    // console.table(student);
+
+    //eg. 3 *Higher order functions*
+    function findByProp(key, value) {
+      return function match(student) {
+        return student[key] === value;   // ***square brackets:  student[]
+      }
+    }
+
+    const student = students.find(findByProp('first_name', 'Gilly'));
+    console.log(student);
+
+
+    console.clear();
+    //REDUCE
+
+    //eg. 1.1
+    // let total = 0;
+    // orderTotals.forEach(t => total += t);
+    // console.log(total);
+
+    //eg. 1.2 *using reduce*
+    let total = 0;
+    function tallyOrders(tally, currentTotal) {
+      console.log(tally, currentTotal);
+      console.log('************');
+      return tally + currentTotal; //accumulated value updated as sum
+    }
+    const allOrders = orderTotals.reduce(tallyOrders, 0);
+    console.log(allOrders);
+
+    //eg. 2
+    function inventoryReducer(totals, item) {
+      console.log(item.type);
+      // increment the type by 1
+      totals.shirt = totals.shirt + 1 || 1;
+      // return the totals, so the next loop can use it
+      return totals;
+    }
+    const inventoryCount = inventory.reduce(inventoryReducer, {});
+    console.log(inventoryCount);
   </script>
 </body>
 

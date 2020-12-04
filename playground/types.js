@@ -31,7 +31,6 @@ const html = `
 
 document.body.innerHTML = html;
 
-*/
 
 // const age = 100.5;
 // const name = 'wes';
@@ -77,12 +76,43 @@ const teller = {
 teller.first = 'Teller';
 teller.last = null;
 
-*/
-
 let isDrawing = false;
 let age = 18;
 const ofAge = age > 19;
 console.log(ofAge);
 
 age = 100;
+let age2 = 100;
+*/
+/*eslint-disable*/
+/*
+const name = 'Amisha';
+const last = `Jangra`;
+const gender = "Female";
+
+const sentence = `she's so "cool"`;
+
+const song = `hast du viel zeit fur mich,
+
+neunundneunzig luftballoons,
+
+neunundneunzig luftballoons !`;
+
+const message = `Ich bin ${name} ${last}. Wie geht es ?`;
+
+const html = `
+<div>
+<h1>${name}</h1>
+<p>${message}</p>
+</div>
+`;
+
+document.body.innerHTML = html
+*/
+let age = 18;
+let isDrawing = false;
+
+const ofAge = age > 19;
+console.log(ofAge);
+
 let age2 = 100;

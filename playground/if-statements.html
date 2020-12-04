@@ -21,16 +21,56 @@
   * a variable set to `"hello" - 10` NaN
   * empty string
 
-  <script>
-
-    function slugify(sentence, lowercase) {
-      let slug = sentence.replace(/\s/g, '-');
+  <script>function slugify(sentence, lowercase) {
+      const slug = sentence.replace(/\s/g, '-');
       if (lowercase) {
         return slug.toLowerCase();
       }
       return slug;
     }
 
+    const values = [
+      [],
+      {},
+      -10,
+      1,
+      0,
+      '',
+      'full string',
+      ' ',
+      undefined,
+      null,
+      NaN,
+    ];
+
+    console.group('truthy or falsy values');
+    values.forEach(value => {
+      if (value) {
+        console.log(value, 'is truthy');
+      } else {
+        console.log(value, 'is falsy');
+      }
+    });
+    console.groupEnd();
+
+    console.clear();
+
+    const isCool = true;
+    if (!isCool) {
+      console.log('You are not cool');
+    }
+
+    // ternary
+    const count = 1;
+    // let word;
+    // if (count === 1) {
+    //   word = 'item';
+    // } else {
+    //   word = 'items';
+    // }
+
+    const sentence = `You have ${count} item${count === 1 ? '' : 's'} in your cart`;
+    console.log(sentence);
   </script>
 </body>
 

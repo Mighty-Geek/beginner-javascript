@@ -23,7 +23,6 @@
 //   console.log(i);
 // }
 
-
 const dog = 'snickers';
 
 function logDog(dog) {
@@ -32,7 +31,7 @@ function logDog(dog) {
 
 function go() {
   const dog = 'sunny';
-  logDog('sunny');
+  logDog(dog);
 }
 
 go();

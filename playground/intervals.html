@@ -11,47 +11,32 @@
 <body>
   <script>
     function buzzer() {
-      console.log('ENNGGGGGGG');
+      console.log('ENNNGGG');
     }
-
-    // console.log('Starting');
+    // console.log('starting');
     // setTimeout(buzzer, 500);
     // console.log('finishing');
 
-
     function setImmediateInterval(funcToRun, ms) {
-      // right away call that function
+      // right away call the function
       funcToRun();
       // run a regular interval
+
       return setInterval(funcToRun, ms);
     }
 
-    setImmediateInterval(buzzer, 2000);
-    function sayHi() {
-      console.log('Heyyy');
-    }
-    // setImmediateInterval(sayHi, 200);
+    // setImmediateInterval(buzzer, 10000);
 
     function destroy() {
-      document.body.innerHTML = `<p>DESTROYED</p>`;
+      document.body.innerHTML = ` <p> DESTROYED </p>`;
     }
 
     const bombTimer = setTimeout(destroy, 5000);
 
     window.addEventListener('click', function () {
-      console.log('You clicked! You saved the world');
-      // ???? How do i stop
-      clearTimeout(bombTimer); // STOP THE TIMER FROM RUNNING
+      console.log('YOu clicked! you just saved the world');
+      clearTimeout(bombTimer);
     });
-
-    const poopInterval = setInterval(function () {
-      console.log('💩');
-      console.log('Hehehe');
-    }, 100);
-
-    setTimeout(function () {
-      clearInterval(poopInterval);
-    }, 3000);
   </script>
 </body>
 
